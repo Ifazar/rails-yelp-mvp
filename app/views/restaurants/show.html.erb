@@ -1,0 +1,43 @@
+<div>
+  <div class="p-3">
+    <h2><%= @restaurant.name %></h2>
+  </div>
+
+  <div class="p-3">
+    <p><%= @restaurant.address %></p>
+  </div>
+
+  <div class="p-3">
+    <p><%= @restaurant.phone_number %></p>
+  </div>
+
+  <div class="p-3">
+    <p><%= @restaurant.category %></p>
+  </div>
+</div>
+
+
+<div>
+  <p><%= button_to "Ajouter un commentaire", new_restaurant_review_path(@restaurant), method: :get %></p>
+</div>
+
+<div class="p-2">
+  <%= button_to "Edit", edit_restaurant_path,method: :get %>
+</div>
+
+<div class="p-2">
+  <%= button_to "Delete", restaurant_path,method: :delete %>
+</div>
+
+<div>
+  <h4>Review</h4>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %> <%= review.rating %> </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to"Return to all restaurant", restaurants_path %>
+</div>

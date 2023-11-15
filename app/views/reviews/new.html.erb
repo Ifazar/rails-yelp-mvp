@@ -1,0 +1,16 @@
+<div>
+  <%= form_with model: [@restaurant, @review] do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating %>
+
+  <%= f.submit %>
+<% end %>
+</div>
+
+<div>
+  <%= link_to"Return to all restaurant", restaurants_path %>
+</div>
